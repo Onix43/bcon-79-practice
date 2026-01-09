@@ -1,6 +1,6 @@
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 [class^="out-"] {
   min-height: calc(1em * 1.6);
