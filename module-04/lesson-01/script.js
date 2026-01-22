@@ -259,15 +259,15 @@ document.querySelector(".b-15").onclick = fn15;
 // Task 16
 const obj16 = {
   iis8sj: {
-    name: "Ivan",
+    name: "Mango",
     age: 27,
   },
   iiss7j: {
-    name: "Petr",
+    name: "Poly",
     age: 26,
   },
   s3s8sj: {
-    name: "Serg",
+    name: "Ajax",
     age: 47,
   },
 };
