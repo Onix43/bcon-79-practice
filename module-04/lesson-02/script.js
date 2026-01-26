@@ -21,7 +21,13 @@ const Account = {
    * Метод створює та повертає об'єкт транзакції.
    * Приймає суму та тип транзакції.
    */
-  createTransaction(amount, type) {},
+  createTransaction(amount, type) {
+    return {
+      id: this.transactions.length + 1,
+      amount,
+      type,
+    };
+  },
 
   /*
    * Метод, що відповідає за додавання суми до балансу.
@@ -29,7 +35,10 @@ const Account = {
    * Викликає createTransaction для створення об'єкта транзакції
    * після чого додає його до історії транзакцій
    */
-  deposit(amount) {},
+  deposit(amount) {
+    this.balance += amount;
+    this.transactions.push(this.createTransaction(amount, Transaction.DEPOSIT));
+  },
 
   /*
    * Метод, що відповідає за зняття суми з балансу.
@@ -40,21 +49,51 @@ const Account = {
    * Якщо amount більше ніж поточний баланс, виводь повідомлення
    * про те, що зняття такої суми не можливе, недостатньо коштів.
    */
-  withdraw(amount) {},
+  withdraw(amount) {
+    if (amount > this.balance) {
+      console.log("Not enough money");
+      return;
+    }
+
+    this.balance -= amount;
+    this.transactions.push(
+      this.createTransaction(amount, Transaction.WITHDRAW)
+    );
+  },
 
   /*
    * Метод повертає поточний баланс
    */
-  getBalance() {},
+  getBalance() {
+    return this.balance;
+  },
 
   /*
    * Метод шукає та повертає об'єкт транзакції по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    return this.transactions.find(transaction => transaction.id === id);
+  },
 
   /*
    * Метод повертає кількість коштів
    * певного типу транзакції з усієї історії транзакцій
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {
+    return this.transactions.reduce((acc, value) => {
+      if (value.type === type) {
+        acc += value.amount;
+      }
+      return acc;
+    }, 0);
+  },
 };
+Account.deposit(1000);
+Account.deposit(3000);
+Account.deposit(1000);
+Account.deposit(2000);
+Account.withdraw(8000);
+console.log(Account.getBalance());
+console.table(Account.transactions);
+console.log(Account.getTransactionDetails(3));
+console.log(Account.getTransactionTotal(Transaction.WITHDRAW));
