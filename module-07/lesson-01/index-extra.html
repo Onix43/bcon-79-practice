@@ -14,13 +14,13 @@
   <body>
     <!-- Перше завдання
     При кліку на кнопку змінити value в input -->
-    <input type="text" id="input" value="Hello" />
-    <button>Click me</button>
+    <!-- <input type="text" id="input" value="Hello" />
+    <button>Click me</button> -->
 
     <!-- Друге завдання
     При кліку на кнопку показати alert із значенням, яке введено в input -->
-    <!--
-    <button>Click me</button>
+
+    <!-- <button>Click me</button>
     <input type="text" id="input" /> -->
 
     <!-- Третє завдання
@@ -41,9 +41,9 @@
     Вводимо число у input із id="test" число.
     При кліку на кнопку у input із id = "result" повинен виводити квадрта цього числа
     Якщо ввели не число, показувати alert із текстом "Ввели не число" -->
-    <!-- <input type="text" value="" placeholder="Введіть число" id="test">
-    <input id = "result" value = "Результат" disabled>
-    <button >Click me</button> -->
+    <!-- <input type="text" value="" placeholder="Введіть число" id="test" />
+    <input id="result" value="Результат" disabled />
+    <button>Click me</button> -->
 
     <!-- Шосте завдання -->
     <!-- Напишіть інтерфейс, щоб створити список.
@@ -51,7 +51,9 @@
     Запитуйте вміст у користувача за допомогою prompt. Створюйте пункт і додайте його до UL.
     Процес припиняється, коли користувач натискає ESC.
     Усі елементи мають створюватися динамічно.  -->
-    <!-- <h1>Створення списку</h1> -->
+    <!-- <ul>
+      Створення списку
+    </ul> -->
 
     <!-- Сьоме завдання -->
     <!-- Додайте усім посиланням подію - за наведенням на посилання в атрибут title запишеться її текст  -->
@@ -65,8 +67,8 @@
     Зробіть так, щоб було дві функції: одна фарбує в червоний колір,
     інша в зелений і вони змінювали одна одну через removeEventListener.  -->
     <!-- <span>1</span>
-      <span>2</span>
-      <span>3</span> -->
+    <span>2</span>
+    <span>3</span> -->
 
     <!-- Дев'яте завдання -->
     <!-- Даний ol, у ньому декілька li. Під ol є кнопка, при натисканні на яку
@@ -74,21 +76,20 @@
     натисканні на кожен li, йому в кінець додавався '!'. Це мусить працювати і
     для знову доданих li. Завдання вирішіть за допомогою делегування (тобто
     подія має бути додана на ol). -->
-    <!--
-      <ol id="ol">
-        <li>пункт</li>
-        <li>пункт</li>
-        <li>пункт</li>
-      </ol>
+    <!-- <button id="btn">Додати li</button>
 
-      <button id="btn">Додати li</button> -->
+    <ol id="ol">
+      <li>пункт</li>
+      <li>пункт</li>
+      <li>пункт</li>
+    </ol> -->
 
     <!-- Десяте завдання -->
     <!-- Реалізуйте поведінку поведінку кнопок натискання на них (одна з них блокує
     інпут за допомогою атрибута disabled, а інша розблокує) -->
     <!-- <button class="lock">Заблокувати</button>
-      <button class="unlock">Розблокувати</button>
-      <input type="text" id="input"> -->
+    <button class="unlock">Розблокувати</button>
+    <input type="text" id="input" /> -->
 
     <!-- Одинадцяте завдання -->
     <!-- В інпути вводимо число, при натисканні на кнопку у span із id="result"
@@ -105,17 +106,17 @@
     <!-- Дванадцяте завдання -->
     <!-- Додайте всім інпутам наступну подію - втрата фокусу кожен інпут виводить
     своє value в абзац з id="test". -->
-    <!-- <input type="text" value="1">
-    <input type="text" value="2">
-    <input type="text" value="3">
+    <!-- <input type="text" value="1" />
+    <input type="text" value="2" />
+    <input type="text" value="3" />
     <p id="test"></p> -->
 
     <!-- Тринадцяте завдання -->
     <!-- У інпут вводимо літеру або число. У span із id="show" виводимо код клавіші,
     яку натиснули -->
-    <!-- <input placeholder="Введіть текст" />
+    <input placeholder="Введіть текст" />
     <br /><br />
-    <div>Код клавіші, яку натиснули: <span id="show">?</span></div> -->
+    <div>Код клавіші, яку натиснули: <span id="show">?</span></div>
 
     <!-- Чотирнадцяте завдання -->
     <!-- У інпут вводимо літеру або число. У span із id="show" виводимо значення
@@ -126,5 +127,6 @@
     <div>Наатиснуто клавішу: <span id="show">?</span></div> -->
 
     <script src="./index.js" type="module"></script>
+    <script type="module" src="./script-extra.js"></script>
   </body>
 </html>
