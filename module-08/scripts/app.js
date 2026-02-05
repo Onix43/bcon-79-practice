@@ -4,6 +4,11 @@
 const list = document.querySelector(".cards");
 const loader = document.querySelector(".spinner");
 const form = document.querySelector(".search-form");
+const toast = document.querySelector(".toast");
+
+const markup = renderPosts(posts);
+
+list.insertAdjacentHTML("beforeend", markup);
 
 function renderPosts(posts) {
   return posts
@@ -58,11 +63,26 @@ function renderPosts(posts) {
     })
     .join("");
 }
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-function handleFormSubmit() {}
+  const queue = event.target.elements.searchQuery.value.trim();
+  const toastNotification = bootstrap.Toast.getOrCreateInstance(toast);
+
+  if (queue.trim() === "") {
+    toastNotification.show();
+    return;
+  }
+  list.innerHTML = "";
+  loader.classList.remove("visually-hidden");
+
+  setTimeout(() => {
+    const newMarkup = posts.filter(
+      post => post.title.includes(queue) || post.body.includes(queue)
+    );
+    loader.classList.add("visually-hidden");
+    list.insertAdjacentHTML("beforeend", renderPosts(newMarkup));
+  }, 500);
+}
 
 form.addEventListener("submit", handleFormSubmit);
-
-loader.classList.remove("visually-hidden");
-const markup = renderPosts(posts);
-list.insertAdjacentHTML("beforeend", markup);
